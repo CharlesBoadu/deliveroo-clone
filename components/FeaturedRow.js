@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { ArrowRightIcon } from 'react-native-heroicons/outline'
 import RestaurantCards from './RestaurantCards'
 import sanityClient from '../sanity'
+import restaurant from '../sanity/schemas/restaurant'
 
 const FeaturedRow = ({ id, title, description}) => {
 
@@ -26,7 +27,7 @@ const FeaturedRow = ({ id, title, description}) => {
     .then((data) => {
       setRestaurants(data?.restaurants);
     });
-  }, []);
+  }, [ id ]);
 
 // console.log(restaurants)
 
@@ -47,7 +48,6 @@ const FeaturedRow = ({ id, title, description}) => {
         className="pt-4"
       >
         {/* Restaurant Cards */}
-        {/* {console.log(restaurants)}
         {restaurants?.map((restaurant) => (
           <RestaurantCards
             key={restaurant._id}
@@ -62,13 +62,13 @@ const FeaturedRow = ({ id, title, description}) => {
             long={restaurant.long}
             lat={restaurant.lat}  
           />
-        ))} */}
-        {restaurants?.map((restaurant) => (
-          <RestaurantCards 
-            imgUrl={restaurant.image}
-          />
         ))}
-        <RestaurantCards 
+        {/* {restaurants?.map((restaurant) => (
+          <RestaurantCards 
+
+          />
+        ))} */}
+        {/* <RestaurantCards 
         id={123}
         // imgUrl="https://links.papareact.com/gn7"
         title="Yo Sushi"
@@ -115,7 +115,7 @@ const FeaturedRow = ({ id, title, description}) => {
         dishes={[]}
         long={20}
         lat={0}
-        />
+        /> */}
       </ScrollView>
     </View>
   )

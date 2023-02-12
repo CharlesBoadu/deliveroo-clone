@@ -28,6 +28,12 @@ export default {
       // validation: (Rule) => Rule.required(),
     },
     {
+      name: "long",
+      type: "number",
+      title: "Longitude of the Restaurant",
+      // validation: (Rule) => Rule.required(),
+    },
+    {
       name: "address",
       type: "string",
       title: "Restaurant address",

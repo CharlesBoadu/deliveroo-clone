@@ -1,6 +1,4 @@
-import {defineField, defineType} from 'sanity'
-
-export default defineType({
+export default {
   name: 'category',
   title: 'Menu Category',
   type: 'document',
@@ -19,4 +17,4 @@ export default defineType({
     },
 
   ],
-})
+}
